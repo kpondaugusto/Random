@@ -35,9 +35,15 @@ CapitalGammaD2 = 2 *np.pi *6.035e6 #Hz
 mK = 39.96399848 *uatom #error (21)
 
 ahf = -h *285.7308e6 #For groundstate
+ahfHzS = -285.7308 #h MHz
+ahfHzP3o2 = -7.585 # h MHz 
+bhfHz = -3.445 #h MHz 
 gI = 0.000176490 #total nuclear g-factor 
 gJ = 2.00229421 # For groundstate measured value 
 gJ = gS #For theoretical value 
+
+I = 4 #nuclear spin on K40
+S = 1/2 
 
 # def FeshbachField(states):
 # 	Switch[Sort[states], {-9/2, -7/2}, 202.10, {-9/2, -5/2}, 
