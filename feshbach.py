@@ -19,9 +19,9 @@ def Ulj(r):
 
 r = np.linspace(0.1,10,100) #interatomic distance
 
-plt.plot(r, Ulj(r))
+# plt.plot(r, Ulj(r))
 
-plt.show()
+# plt.show()
 
 # Boltzmann's constant, J/K
 kB = 1.381e-23
@@ -45,14 +45,16 @@ U2 = 2*B/r**12 - A/r**6  + 25
 
 fig, ax = plt.subplots(1)
 
-ax.axhline(y=25, color='Pink', linestyle='dotted')
-ax.hlines(y=12, xmin=0.385, xmax=0.615, linewidth=2, color='pink')
-ax.vlines(x=0.5, ymin=12, ymax=25, linewidth=2, color='pink',label='Eb')
-ax.axhline(y=0, color='purple', linestyle='dotted')
+# ax.axhline(y=25, color='Pink', linestyle='dotted')
+ax.hlines(y=6, xmin=0.385, xmax=0.57, linewidth=2, color='plum')
+ax.vlines(x=0.45, ymin=0, ymax=6, linewidth=2, color='mediumpurple',label='Ec')
+ax.vlines(x=0.9, ymin=-2, ymax=10, linewidth=2, color='darkslategrey',label='E')
+ax.hlines(y=10, xmin=0.7, xmax=1, linewidth=2, color='steelblue')
+ax.axhline(y=0, color='lightpink', linestyle='dotted')
 ax.plot(r, U, 'k', lw=2, color='lightblue', label='Open Channel')
-ax.plot(r, U2, 'k', lw=2, color='lavender', label='Closed Channel')
-ax.set_xlabel('Atomic Seperation (nm)')
-ax.set_ylabel('Energy (J)')
+ax.plot(r, U2, 'k', lw=2, color='lavender', label='Closed ab Channel')
+ax.set_xlabel('Atomic Seperation ')
+ax.set_ylabel('Energy')
 # ax.set_xlim(0, 0.8)
 ax.set_ylim(-150, 100)
 ax.set_yticks([0])
