@@ -19,8 +19,7 @@ def asqzeta(v):
 vvals = np.linspace(-1,1,10000)
 vvals2 = np.linspace(-2,2,10000)
 
-#def add_subplot_axes(ax,rect,facecolor='w'): # matplotlib 2.0+
-def add_subplot_axes(ax,rect):
+def add_subplot_axes(ax,rect,facecolor='w'):
     fig = plt.gcf()
     box = ax.get_position()
     width = box.width
@@ -68,9 +67,9 @@ def example2():
         subax2.plot(x,np.sin(x))
 
 def example3():
-    fig = plt.figure(figsize=(10,10))
+    fig = plt.figure(figsize=(14,10))
     axes = []
-    subpos = [0.2,0.55,0.4,0.4]
+    subpos = [0.1,0.57,0.4,0.4]
     x = np.linspace(-np.pi,np.pi)
     for i in range(1,2): #2 is one plot, 3 is 2 plots beside each other, 4 is 3 plots, 5 is 4 plots ??
         axes.append(fig.add_subplot(2,2,i))
@@ -78,13 +77,20 @@ def example3():
         axis.set_xlim(-np.pi,np.pi)
         axis.set_ylim(-1,3)
         axis.plot(vvals2,zeta(vvals2))
+        axis.text(0.8, 0.21, '$\zeta$', horizontalalignment='center', verticalalignment='center')
+        axis.text(0.1, 0.225, '$1/a$', horizontalalignment='center', verticalalignment='center')
         axis.set_ylim(0,0.4)
         axis.set_xlim(-2,2)
+        axis.set_xlabel('1/a')
+        # axis.set_ylabel('Bulk Viscosity')
+
         subax1 = add_subplot_axes(axis,subpos)
         # subax2 = add_subplot_axes(subax1,subpos)
         subax1.plot(vvals,asqzeta(vvals))
         subax1.set_ylim(0,3)
         subax1.set_xlim(-1,1)
+        subax1.text(0.5, 1.5, '$a^2\zeta$', horizontalalignment='center', verticalalignment='center')
+		   # subax1.set_xlabel('v')
 
         # subax2.plot(x,np.sin(x))	
 	
