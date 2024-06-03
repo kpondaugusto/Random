@@ -27,9 +27,12 @@ def Bconst(x,c):
 #Helmholtz arrangement for providing a uniform field.
 	return (1+(c-x)**2)**(-3/2)+ (1+(c+x)**2)**(-3/2)
 
-xvals = np.linspace(-1.5,1.5,1000)
+xvals = np.linspace(-2.5,2.5,1000)
 
 
 plt.xlabel("x")
 plt.ylabel('B*2/(mu*I)')
-plt.plot(xvals,B(xvals,2,1)) 
+plt.plot(xvals,B(xvals,2,2),label='c=a') 
+plt.plot(xvals,B(xvals,2,0.25),label='8c=a') 
+plt.plot(xvals,B(xvals,2,1),label='2c=a') 
+plt.legend()

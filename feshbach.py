@@ -10,7 +10,7 @@ from constants import *
 import matplotlib.pyplot as plt
 
 #lennard jones potential 
-
+plt.style.use('dark_background')
 sigma = 3
 epsilon = 3.2
 
